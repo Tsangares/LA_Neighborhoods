@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LA Neighborhoods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/map.css">
+</head>
+<body>
+    <h1>Welcome to Los Angeles</h1>
+    <div id="map-container">
+        <div id="map-graphic">
+          <svg id="map-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210">
+            {% include 'polygon.html' %}
+          </svg>
+        </div>
+    </div>
+</body>
+<foot>
+    <script src="/static/map.js"></script>
+</foot>
+</html>

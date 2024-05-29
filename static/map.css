@@ -1,0 +1,21 @@
+#map-svg {
+    width: auto;
+    height: 100vmin;
+}
+#map-container {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: rgba(250,244,211,1);
+}
+path {
+    
+    transition: all .2s linear !important;
+}
+path:hover {
+    fill: rgba(250,244,211,1) !important;
+}
