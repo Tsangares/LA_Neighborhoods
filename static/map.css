@@ -1,21 +1,74 @@
-#map-svg {
-    width: auto;
-    height: 100vmin;
-}
-#map-container {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-}
-html, body{
+/* General page styling */
+html, body {
     margin: 0;
     padding: 0;
-    background-color: rgba(250,244,211,1);
+    background-color: #F5F5DC; /* Beige background to give a sunny LA feel */
+    font-family: 'Roboto', sans-serif; /* Modern and clean font */
+    color: #333; /* Dark grey text for good readability */
+    padding-bottom: 10vh;
 }
-path {
-    
-    transition: all .2s linear !important;
+
+/* Title styling */
+h1 {
+    font-family: 'Pacifico', cursive; /* Nostalgic and chill font */
+    font-size: 2.5em;
+    text-align: center;
+    color: #E91E63; /* A pop of color reminiscent of LA sunsets */
+    margin-top: 20px;
 }
-path:hover {
-    fill: rgba(250,244,211,1) !important;
+
+/* Description styling */
+p#description {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* Map container and SVG styling */
+#map-container {
+    width: 100%;
+    height: 100%;
+}
+#map-graphic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjusted height for better layout */
+    width: auto;
+}
+
+#map-svg {
+    width: auto;
+    height: 100vh;
+}
+
+/* Zone styling */
+.zone {
+    fill: #64B5F6; /* Light blue fill for neighborhood zones */
+    stroke: #1E88E5; /* Dark blue stroke for clear boundaries */
+    transition: all 0.2s ease-in-out;
+}
+
+.zone:hover {
+    fill: #FFEB3B; /* Highlight color on hover */
+    stroke: #FBC02D; /* Darker highlight for better visibility */
+    cursor: pointer;
+}
+
+/* Footer styling */
+foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #E0E0E0; /* Light grey footer */
+    color: #757575; /* Dark grey text for footer */
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
