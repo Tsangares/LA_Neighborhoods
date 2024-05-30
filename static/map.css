@@ -19,6 +19,12 @@ h1 {
 
 /* Description styling */
 p#description {
+    position: fixed;
+    left: 1rem;
+    bottom: 0rem;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 1rem;
+    padding: .5rem;
     font-size: 1.2em;
     text-align: center;
     margin: 20px auto;
@@ -26,6 +32,7 @@ p#description {
     max-width: 800px;
     line-height: 1.5;
     color: #444;
+    pointer-events: none;
 }
 
 /* Map container and SVG styling */
@@ -48,27 +55,36 @@ p#description {
 
 /* Zone styling */
 .zone {
-    fill: #64B5F6; /* Light blue fill for neighborhood zones */
-    stroke: #1E88E5; /* Dark blue stroke for clear boundaries */
+    fill: #64B5F6 !important; /* Light blue fill for neighborhood zones */
+    stroke: #1E88E5 !important; /* Dark blue stroke for clear boundaries */
+    cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
 .zone:hover {
-    fill: #FFEB3B; /* Highlight color on hover */
-    stroke: #FBC02D; /* Darker highlight for better visibility */
-    cursor: pointer;
+    fill: #FFEB3B !important; /* Highlight color on hover */
+    stroke: #FBC02D !important; /* Darker highlight for better visibility */
+}
+
+.zone:active {
+    fill: #FF7043 !important; /* Vibrant orange fill on click for a bold effect */
+    stroke: #D84315 !important; /* Darker orange stroke for emphasis */
+    transform: scale(0.98); /* Slightly shrink to indicate active state */
 }
 
 /* Footer styling */
+/*
 foot {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    background-color: #E0E0E0; /* Light grey footer */
-    color: #757575; /* Dark grey text for footer */
+    background-color: #E0E0E0; 
+    color: #757575;
     font-size: 0.9em;
     position: fixed;
     bottom: 0;
     width: 100%;
+    display: none;
 }
+*/
