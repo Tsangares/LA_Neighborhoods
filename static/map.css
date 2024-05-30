@@ -87,3 +87,25 @@ foot {
     display: none;
 }
 */
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em; /* Smaller title for tablets and small screens */
+    }
+    
+    p#description {
+        font-size: .95em; /* Smaller font size for paragraph on tablets and small screens */
+        padding: 1rem; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em; /* Even smaller title for mobile devices */
+    }
+    
+    p#description {
+        font-size: .85em; /* Smaller font size for paragraph on mobile devices */
+        padding: 0.8rem; /* Adjust padding */
+    }
+}
