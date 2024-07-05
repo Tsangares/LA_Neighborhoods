@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>LA Neighborhoods</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/map.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="/static/js/jquery4.js"></script>
-</head>
-<body>
-    <h1>Welcome to <span id="location-title">Los Angeles</span></h1>
-    <div id="map-container">
-        <div id="map-graphic">
-          <svg id="map-svg" xmlns="http://www.w3.org/2000/svg" viewBox="62 10 128 187">
-            {% include 'polygon.html' %}
-          </svg>
-        </div>
-    </div>
-    <p id="description">
-      Los Angeles, the City of Angels, is a sprawling metropolis where dreams are made and the sun always shines. Known for its diverse neighborhoods, iconic entertainment industry, and endless cultural attractions, it's a place where every street has a story and every corner a potential discovery. Locals revel in the city's vibrant energy, from the beaches of Santa Monica to the skyscrapers of downtown, making LA a dynamic and ever-evolving tapestry of experiences.
-    </p>
-</body>
-<foot>
-    <script src="/static/map.js"></script>
-    <!--<p>&copy; 2024 <a href="https://yque.com">YQue</a> Neighborhoods</p>-->
-</foot>
+  <head>
+      <title>LA Neighborhoods</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/static/map.css">
+      <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+      <script src="/static/js/jquery4.js"></script>
+  </head>
+  <body>
+      <h1>Welcome to <span id="location-title">Los Angeles</span></h1>
+      <div id="map-container">
+          <div id="map-graphic">
+            <svg id="map-svg" xmlns="http://www.w3.org/2000/svg" viewBox="62 10 128 187">
+              {% include 'polygon.html' %}
+            </svg>
+          </div>
+      </div>
+      <p id="description">
+        Los Angeles, the City of Angels, is a sprawling metropolis where dreams are made and the sun always shines. Known for its diverse neighborhoods, iconic entertainment industry, and endless cultural attractions, it's a place where every street has a story and every corner a potential discovery. Locals revel in the city's vibrant energy, from the beaches of Santa Monica to the skyscrapers of downtown, making LA a dynamic and ever-evolving tapestry of experiences.
+      </p>
+  </body>
+  <foot>
+
+    <script>
+      mapping = {{zones|tojson}}
+  </script>
+      <script src="/static/map.js"></script>
+      <!--<p>&copy; 2024 <a href="https://yque.com">YQue</a> Neighborhoods</p>-->
+  </foot>
 </html>

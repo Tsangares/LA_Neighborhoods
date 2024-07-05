@@ -3,7 +3,7 @@ const update_location_title = (e)=>{
     const title = document.getElementById('location-title');
     const description = document.getElementById('description');
     if (mapping.hasOwnProperty(_id)) {
-        let name = mapping[_id]
+        let name = mapping[_id]['name']
         title.innerHTML = name;
         description.innerHTML = descriptions[name];
     } else {
@@ -13,12 +13,26 @@ const update_location_title = (e)=>{
 
 };
 
+const goto_location_title = (e)=>{
+    const _id  = $(e).attr('id');;
+    if (mapping.hasOwnProperty(_id)) {
+        // Go to the location of this link like an anchor href
+        let url = mapping[_id]['link']
+        window.location.href = url;
+    } 
+};
+
 $('.zone').each( (i,element) => {
-    $(element).on('click', (e) => {
+    $(element).on('mouseover', (e) => {
         update_location_title(element);
+    });
+    $(element).on('click', (e) => {
+        goto_location_title(element);
     });
 });
 
+
+/*
 mapping = {
     //'path13': 
     'path14': 'West Hills',
@@ -77,6 +91,7 @@ mapping = {
     'path88': 'South Los Angeles',    
     'path89': 'Watts',
 }
+*/
 descriptions = {
     "West Hills": "West Hills is where suburbia meets the edge of the San Fernando Valley, offering residents both tranquility and a hint of wildness with the nearby Santa Susana Mountains. It's a place where you can enjoy a quiet life and still be close enough to spot the occasional coyote crossing the road. Locals boast about their proximity to hiking trails, making weekend adventures a neighborhood staple.",
     "Chatsworth": "Chatsworth, known for its rocky landscapes and historic landmarks, is the hidden gem of the Valley, where the Old West meets modern suburbia. It's the only place where you might bump into a movie star hiking up the same scenic trails you're exploring. With its equestrian roots and sprawling ranch-style homes, it's LA's nod to country living.",
