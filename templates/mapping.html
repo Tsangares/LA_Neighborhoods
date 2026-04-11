@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>LA Neighborhoods</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/static/map.css">
+      <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+      <script src="/static/js/jquery4.js"></script>
+  </head>
+  <body>
+    <form action="/add" method="POST">
+        <h2>Add a new zone</h2>
+        <div>
+            <label for="path_id">Path ID</label>
+            <input type="text" id="path_id" name="path_id">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div>
+            <label for="link">Link</label>
+            <input type="text" id="link" name="link">
+        </div>
+        <input type="submit" value="Add">
+    </form>
+        {%for zone in zones%}
+        <form action="/edit/{{zone._id}}" method="POST">
+            <h2>{{zone.path_id}}</h2>
+            <div>
+                <label for="{{zone.name}}">Name</label>
+                <input type="text" id="{{zone.path_id}}-name" name="name" value="{{zone.name}}">
+            </div>
+            <div>
+                <label for="{{zone.link}}">Link</label>
+                <input type="text" id="{{zone.path_id}}-link" name="link" value="{{zone.link}}">
+            </div>
+            <input type="submit" value="Save">
+        </form><br>
+        {% endfor %}
+      </form>
+  </body>
+  <foot>
+      <script src="/static/map.js"></script>
+      <!--<p>&copy; 2024 <a href="https://yque.com">YQue</a> Neighborhoods</p>-->
+  </foot>
+</html>
